@@ -1,0 +1,69 @@
+
+@font-face {  font-family: 'Ubuntu';
+    src: url('../polices/Ubuntu/Ubuntu-Regular.ttf');
+}
+
+body {
+    font-family: Ubuntu;
+    padding: 80px;
+    color: #ffffff;
+    background: linear-gradient(to right, #131313, #323232);
+}
+
+.nom {
+    background-color: #262626;
+    color: lightgray;
+}
+
+.nom td {
+    padding: 15px;
+}
+
+.prenom {
+    background-color: #262626;
+    color: lightgray;
+}
+
+.prenom td {
+    padding: 15px;
+}
+
+.mail {
+    background-color: #262626;
+    color: lightgray;
+
+}
+
+.mail td {
+    padding: 15px;
+}
+
+.mdp {
+    background-color: #262626;
+    color: lightgray;
+}
+
+.mdp td {
+    padding: 15px;
+}
+
+tfoot tr td {
+    padding: 20px;
+}
+
+tfoot {
+    border-collapse: collapse;
+    border: 1px solid black;
+    background-color: #1a1a1a;
+}
+
+table {
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+tfoot tr td input {
+    background-color: #1a1a1a;
+    color: lightgray;
+    border: none;
+}
