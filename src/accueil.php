@@ -85,6 +85,17 @@ $objPdo->query('SET NAMES utf8');
     </ul>
 </form>
 
+
+<!--
+1 faire un formulaire avec les boutons submit pour les tris (date, thème, ...)
+
+2 dans des balises php faire des if sur les isset sur les boutons submit
+    stocker dans la meme var String les requetes sql
+
+3 a l'aide d'un foreach, afficher les articles de la base
+-->
+
+
 <?php
 
 if (isset($_SESSION['mail']) && isset($_SESSION['mdp'])){
