@@ -6,7 +6,7 @@
 body {
     font-family: Ubuntu;
     padding: 80px;
-    color: #ff0000;
+    color: #ffffff;
     background: linear-gradient(to right, #131313, #323232);
 }
 
@@ -48,4 +48,13 @@ tfoot tr td input {
     background-color: #1a1a1a;
     color: lightgray;
     border: none;
+}
+
+tfoot tr td a:link {
+    text-decoration: none;
+}
+
+tfoot tr td a {
+    color: lightgray;
+    font-size: 14px;
 }

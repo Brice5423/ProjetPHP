@@ -8,6 +8,7 @@
 
 <body>
     <header>
+        <title>Créer un Compte</title>
         <from method="post" action = "creerCompte.php">
             <h2 align="center">Sign In</h2>
 
@@ -49,8 +50,8 @@
                 <tfoot>
                 <tr>
                     <td id="1" align="center" colspan="2">
-                        <input type="button" value="Sign In" name="creerCompte">
-                        <input type="button" value="Log In" name="seConnecter">
+                        <input type="submit" value="Sign In" name="creerCompte">
+                        <a href="http://localhost/ProjetPHP/src/seConnecter.php">Log In </a>
                     </td>
                 </tr>
                 </tfoot>
@@ -61,9 +62,3 @@
 </body>
 
 </html>
-
-<?php
-if (isset($_POST["seConnecter"])){
-    header("Location:seConnecter.php");
-}
-?>

@@ -183,9 +183,9 @@ nav.inscrit ul li a {
 /* fonction d'animation, n'oubliez pas de prefixer ! */
 @keyframes slider {
     0%, 20%, 100%	{ left: 0 }
-    25%, 45%		{ left: -100.6% }
-    50%, 70%		{ left: -201.2% }
-    75%, 95%		{ left: -305% }
+    25%, 45%		{ left: -100% }
+    50%, 70%		{ left: -200% }
+    75%, 95%		{ left: -300% }
 }
 
 /* complétez le sélecteur : */
