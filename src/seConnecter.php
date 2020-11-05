@@ -35,7 +35,7 @@
                 <tr>
                     <td id="1" align="center" colspan="2">
                         <input type="submit" value="Log In" name="seConnecter">
-                        <a href="http://localhost/ProjetPHP/src/creerCompte.php">Sign In</a>
+                        <a href="creerCompte.php">Sign In</a>
                     </td>
                 </tr>
                 </tfoot>

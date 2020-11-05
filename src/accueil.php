@@ -35,10 +35,10 @@
         <nav class="inscrit">
             <ul>
                 <li class="inscrit">
-                    <a href="http://localhost/ProjetPHP/src/creerCompte.php">Sign In</a>
+                    <a href="creerCompte.php">Sign In</a>
                 </li>
                 <li class="connect">
-                    <a href="http://localhost/ProjetPHP/src/seConnecter.php">Log In</a>
+                    <a href="seConnecter.php">Log In</a>
                 </li>
             </ul>
         </nav>
