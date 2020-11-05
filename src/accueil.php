@@ -14,7 +14,7 @@ session_start();
     <link rel="stylesheet" type="text/css" media="screen and (min-width:0px)" href="style/accueil.css">
 </head>
 <body>
-<from method="post" action = "accueil.php">
+<form method="post" action = "accueil.php">
     <header>
         <title>Happy News</title>
         <h1 class="titre_site">HAPPY NEWS</h1>
@@ -80,7 +80,7 @@ session_start();
         <li><a title="Afficher la slide 3" href="#sl_i3">Slide 3</a></li>
         <li><a title="Afficher la slide 4" href="#sl_i4">Slide 4</a></li>
     </ul>
-</from>
+</form>
 
 <?php
 

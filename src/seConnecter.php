@@ -9,7 +9,7 @@
 <body>
     <header>
         <title>Se Connecter</title>
-        <from method="post" action = "seConnecter.php">
+        <form method="post" action = "seConnecter.php">
             <h2 align="center">Log In</h2>
 
             <table align="center">
@@ -35,14 +35,20 @@
                 <tr>
                     <td id="1" align="center" colspan="2">
                         <input type="submit" value="Log In" name="seConnecter">
-                        <a href="creerCompte.php">Sign In</a>
+                        <input type="submit" value="Sign In" name="creerCompte"/>
                     </td>
                 </tr>
                 </tfoot>
             </table>
 
-        </from>
+        </form>
     </header>
 </body>
 
 </html>
+
+<?php
+if (isset($_POST['creerCompte'])){
+    header("Location:creerCompte.php");
+}
+?>

@@ -55,8 +55,8 @@ session_start();
                 <tfoot>
                 <tr>
                     <td id="1" align="center" colspan="2">
-                        <input type="submit" value="Sign In" name="valid"/>
-                        <a href="seConnecter.php">Log In </a>
+                        <input type="submit" value="Sign In" name="creerCompte"/>
+                        <input type="submit" value="Log In" name="seConnecter"/>
                     </td>
                 </tr>
                 </tfoot>
@@ -66,7 +66,7 @@ session_start();
 
 <?php
 
-if (isset($_POST['valid'])){
+if (isset($_POST['creerCompte'])){
    if ($_POST['nom'] != "" && $_POST['prenom'] != "" && $_POST['mail'] != "" && $_POST['mdp'] != ""){
        $nom = strtoupper($_POST['nom']);
        $prenom = $_POST['prenom'];
@@ -87,6 +87,9 @@ if (isset($_POST['valid'])){
    }
 }
 
+if (isset($_POST['seConnecter'])){
+    header("Location:seConnecter.php");
+}
 ?>
 
 </html>
