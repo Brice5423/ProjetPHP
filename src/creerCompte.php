@@ -1,3 +1,9 @@
+<?php
+include ("database/connection.php");
+$objPdo = connect();
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="FR">
 
@@ -7,9 +13,8 @@
 </head>
 
 <body>
-    <header>
         <title>Créer un Compte</title>
-        <from method="post" action = "creerCompte.php">
+        <form method="post">
             <h2 align="center">Sign In</h2>
 
             <table align="center">
@@ -50,15 +55,38 @@
                 <tfoot>
                 <tr>
                     <td id="1" align="center" colspan="2">
-                        <input type="submit" value="Sign In" name="creerCompte">
+                        <input type="submit" value="Sign In" name="valid"/>
                         <a href="seConnecter.php">Log In </a>
                     </td>
                 </tr>
                 </tfoot>
             </table>
-
-        </from>
-    </header>
+        </form>
 </body>
+
+<?php
+
+if (isset($_POST['valid'])){
+   if ($_POST['nom'] != "" && $_POST['prenom'] != "" && $_POST['mail'] != "" && $_POST['mdp'] != ""){
+       $nom = strtoupper($_POST['nom']);
+       $prenom = $_POST['prenom'];
+       $mail = $_POST['mail'];
+       $mdp = $_POST['mdp'];
+
+       $result = $objPdo->query("insert into redacteur(nom, prenom, adressemail, motdepasse) values ('$nom', '$prenom', '$mail', '$mdp')");
+       $result = $objPdo->query("select * from redacteur where adressemail = '$mail' and motdepasse = '$mdp'");
+       foreach ($result as $row ) {
+           $_SESSION['id'] = $row['idredacteur'];
+       }
+       $_SESSION['nom'] = $nom;
+       $_SESSION['prenom'] = $prenom;
+       $_SESSION['mail'] = $mail;
+       $_SESSION['mdp'] = $mdp;
+
+       header("Location:accueil.php");
+   }
+}
+
+?>
 
 </html>

@@ -1,3 +1,10 @@
+<?php
+include ("database/connection.php");
+$objPdo = connect();
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="FR">
 
@@ -74,6 +81,13 @@
         <li><a title="Afficher la slide 4" href="#sl_i4">Slide 4</a></li>
     </ul>
 </from>
+
+<?php
+
+if (isset($_SESSION['mail']) && isset($_SESSION['mdp'])){
+    echo "je suis connecté, je suis " . $_SESSION['nom'] . " " . $_SESSION['prenom'];
+}
+?>
 
 </body>
 </html>
