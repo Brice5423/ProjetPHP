@@ -33,20 +33,18 @@ h3 {
 
 div.menu {
     margin: 5% auto 0 auto;
-    width: 33%;
+    width: 49.9%;
     color: lightgrey;
     display: inline-block;
     text-align: center;
 }
 
-.left {}
+.left {
+}
 
 .middle {
     border-left: 3px solid white;
-    border-right: 3px solid white;
 }
-
-.right {}
 
 div.menu a {
     color: darkgrey;

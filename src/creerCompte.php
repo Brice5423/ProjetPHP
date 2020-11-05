@@ -15,7 +15,7 @@ session_start();
 <body>
         <title>Créer un Compte</title>
         <form method="post">
-            <h2 align="center">Sign In</h2>
+            <h2 align="center">Sign Up</h2>
 
             <table align="center">
                 <thead>

@@ -32,21 +32,25 @@ session_start();
                 </article>
             </a>
         </div>
-        <div class="menu">
-            <a href="">
-                <article class="right">
-                    NEWS
-                </article>
-            </a>
-        </div>
         <nav class="inscrit">
             <ul>
-                <li class="inscrit">
-                    <a href="creerCompte.php">Sign In</a>
-                </li>
-                <li class="connect">
-                    <a href="seConnecter.php">Log In</a>
-                </li>
+                <?php
+
+                if (isset($_SESSION['mail']) && isset($_SESSION['mdp'])){
+                    echo "<li class=\"inscrit\">
+                            <a href=\"seDeconnecter.php\">Log Out</a>
+                          </li>";
+
+                }
+                else {
+                    echo "<li class=\"inscrit\">
+                            <a href=\"creerCompte.php\">Sign Up</a>
+                          </li>
+                          <li class=\"connect\">
+                             <a href=\"seConnecter.php\">Sign In</a>
+                          </li>";
+                }
+                ?>
             </ul>
         </nav>
     </header>
@@ -85,7 +89,7 @@ session_start();
 <?php
 
 if (isset($_SESSION['mail']) && isset($_SESSION['mdp'])){
-    echo "je suis connecté, je suis " . $_SESSION['nom'] . " " . $_SESSION['prenom'];
+    echo "Bonjour " . $_SESSION['nom'] . " " . $_SESSION['prenom'];
 }
 ?>
 

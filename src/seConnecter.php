@@ -1,3 +1,9 @@
+<?php
+include ("database/connection.php");
+$objPdo = connect();
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="FR">
 
@@ -7,42 +13,42 @@
 </head>
 
 <body>
-    <header>
-        <title>Se Connecter</title>
-        <form method="post" action = "seConnecter.php">
-            <h2 align="center">Log In</h2>
 
-            <table align="center">
-                <thead>
-                <tr class="mail">
-                    <td>
-                        <p>Mail</p>
-                    </td>
-                    <td>
-                        <input type="text" size="40" name="mail">
-                    </td>
-                </tr>
-                <tr class="mdp">
-                    <td>
-                        <p>Mot de passe</p>
-                    </td>
-                    <td>
-                        <input type="password" size="25" name="mdp">
-                    </td>
-                </tr>
-                </thead>
-                <tfoot>
-                <tr>
-                    <td id="1" align="center" colspan="2">
-                        <input type="submit" value="Log In" name="seConnecter">
-                        <input type="submit" value="Sign In" name="creerCompte"/>
-                    </td>
-                </tr>
-                </tfoot>
-            </table>
+<title>Se Connecter</title>
+<form method="post">
+    <h2 align="center">Sign In</h2>
 
-        </form>
-    </header>
+    <table align="center">
+        <thead>
+        <tr class="mail">
+            <td>
+                <p>Mail</p>
+            </td>
+            <td>
+                <input type="text" size="40" name="mail">
+            </td>
+        </tr>
+        <tr class="mdp">
+            <td>
+                <p>Mot de passe</p>
+            </td>
+            <td>
+                <input type="password" size="25" name="mdp">
+            </td>
+        </tr>
+        </thead>
+        <tfoot>
+        <tr>
+            <td id="1" align="center" colspan="2">
+                <input type="submit" value="Log In" name="seConnecter">
+                <input type="submit" value="Sign In" name="creerCompte"/>
+            </td>
+        </tr>
+        </tfoot>
+    </table>
+
+</form>
+
 </body>
 
 </html>
@@ -50,5 +56,22 @@
 <?php
 if (isset($_POST['creerCompte'])){
     header("Location:creerCompte.php");
+}
+else if (isset($_POST['seConnecter'])){
+    if ($_POST['mail'] != "" && $_POST['mdp'] != "") {
+        $mail = $_POST['mail'];
+        $mdp = $_POST['mdp'];
+
+        $result = $objPdo->query("select * from redacteur where adressemail = '$mail' and motdepasse = '$mdp'");
+        foreach ($result as $row) {
+            $_SESSION['id'] = $row['idredacteur'];
+            $_SESSION['nom'] = $row['nom'];
+            $_SESSION['prenom'] = $row['prenom'];
+        }
+        $_SESSION['mail'] = $mail;
+        $_SESSION['mdp'] = $mdp;
+
+        header("Location:accueil.php");
+    }
 }
 ?>
