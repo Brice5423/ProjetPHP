@@ -2,7 +2,7 @@
 include ("database/connection.php");
 $objPdo = connect();
 session_start();
-
+$objPdo->query('SET NAMES utf8');
 ?>
 
 <!DOCTYPE html>
@@ -35,12 +35,11 @@ session_start();
         <nav class="inscrit">
             <ul>
                 <?php
-
                 if (isset($_SESSION['mail']) && isset($_SESSION['mdp'])){
                     echo "<li class=\"inscrit\">
-                            <a href=\"seDeconnecter.php\">Log Out</a>
+                                <a href=\"javascript:void(0);\" onclick='seDeco();'>Sign out</a>
+                                <script type='text/javascript' src='popup.js'></script>
                           </li>";
-
                 }
                 else {
                     echo "<li class=\"inscrit\">

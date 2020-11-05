@@ -62,16 +62,22 @@ else if (isset($_POST['seConnecter'])){
         $mail = $_POST['mail'];
         $mdp = $_POST['mdp'];
 
-        $result = $objPdo->query("select * from redacteur where adressemail = '$mail' and motdepasse = '$mdp'");
-        foreach ($result as $row) {
-            $_SESSION['id'] = $row['idredacteur'];
-            $_SESSION['nom'] = $row['nom'];
-            $_SESSION['prenom'] = $row['prenom'];
-        }
-        $_SESSION['mail'] = $mail;
-        $_SESSION['mdp'] = $mdp;
+        $select = $objPdo->query("select * from redacteur where adressemail = '$mail' and motdepasse = '$mdp'");
+        if ($select->rowCount() > 0) {
+            foreach ($select as $row) {
+                $_SESSION['id'] = $row['idredacteur'];
+                $_SESSION['nom'] = $row['nom'];
+                $_SESSION['prenom'] = $row['prenom'];
+            }
+            $_SESSION['mail'] = $mail;
+            $_SESSION['mdp'] = $mdp;
 
-        header("Location:accueil.php");
+            header("Location:accueil.php");
+        } else {
+            echo "<script>alert('Le mail n\'existe pas ');</script>";
+        }
+
+
     }
 }
 ?>
