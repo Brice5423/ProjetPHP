@@ -14,51 +14,50 @@ session_start();
 </head>
 
 <body>
-<title>Créer sa News</title>
-<form method="post">
-    <h2 align="center">Création d'une News</h2>
+    <title>Créer sa News</title>
+    <form method="post">
+        <h2 align="center">Création d'une News</h2>
 
-    <table align="center">
-        <thead>
-        <tr class="nom">
-            <td>
-                <p>Nom</p>
-            </td>
-            <td>
-                <input type="text" size="30" name="nomNews">
-            </td>
-        </tr>
-        <tr class="theme">
-            <td>
-                <p>Thème</p>
-            </td>
-            <td>
-                <select name="theme"><option>fjf</option></select>
-            </td>
-        </tr>
-        <tr class="contenu">
-            <td>
-                <p>Contenu</p>
-            </td>
-            <td>
-                <textarea name="contenu"></textarea>
-            </td>
-        </tr>
-        </thead>
-        <tfoot>
-        <tr>
-            <td id="1" align="center" colspan="2">
-                <input type="submit" value="Valider" name="valider"/>
-                <input type="submit" value="Annuler" name="annuler"/>
-            </td>
-        </tr>
-        </tfoot>
-    </table>
-</form>
+        <table align="center">
+            <thead>
+            <tr class="nom">
+                <td>
+                    <p>Nom</p>
+                </td>
+                <td>
+                    <input type="text" size="30" name="nomNews">
+                </td>
+            </tr>
+            <tr class="theme">
+                <td>
+                    <p>Thème</p>
+                </td>
+                <td>
+                    <select name="theme"><option>fjf</option></select>
+                </td>
+            </tr>
+            <tr class="contenu">
+                <td>
+                    <p>Contenu</p>
+                </td>
+                <td>
+                    <textarea name="contenu"></textarea>
+                </td>
+            </tr>
+            </thead>
+            <tfoot>
+            <tr>
+                <td id="1" align="center" colspan="2">
+                    <input type="submit" value="Valider" name="valider"/>
+                    <input type="submit" value="Annuler" name="annuler"/>
+                </td>
+            </tr>
+            </tfoot>
+        </table>
+    </form>
 </body>
 
 <?php
-
 if (isset($_POST['valider'])){
     if ($_POST['nomNews'] != "" && $_POST['theme'] != "" && $_POST['contenu'] != ""){
         $nomNews = strtoupper($_POST['nomNews']);

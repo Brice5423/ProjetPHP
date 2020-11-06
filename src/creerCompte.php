@@ -14,59 +14,58 @@ session_start();
 </head>
 
 <body>
-        <title>Créer un Compte</title>
-        <form method="post">
-            <h2 align="center">Sign Up</h2>
+    <title>Créer un Compte</title>
+    <form method="post">
+        <h2 align="center">Sign Up</h2>
 
-            <table align="center">
-                <thead>
-                <tr class="nom">
-                    <td>
-                        <p>Nom</p>
-                    </td>
-                    <td>
-                        <input type="text" size="20" name="nom">
-                    </td>
-                </tr>
-                <tr class="prenom">
-                    <td>
-                        <p>Prénom</p>
-                    </td>
-                    <td>
-                        <input type="text" size="15" name="prenom">
-                    </td>
-                </tr>
-                <tr class="mail">
-                    <td>
-                        <p>Mail</p>
-                    </td>
-                    <td>
-                        <input type="text" size="30" name="mail">
-                    </td>
-                </tr>
-                <tr class="mdp">
-                    <td>
-                        <p>Mot de passe</p>
-                    </td>
-                    <td>
-                        <input type="password" size="25" name="mdp">
-                    </td>
-                </tr>
-                </thead>
-                <tfoot>
-                <tr>
-                    <td id="1" align="center" colspan="2">
-                        <input type="submit" value="Sign In" name="creerCompte"/>
-                        <input type="submit" value="Log In" name="seConnecter"/>
-                    </td>
-                </tr>
-                </tfoot>
-            </table>
-        </form>
+        <table align="center">
+            <thead>
+            <tr class="nom">
+                <td>
+                    <p>Nom</p>
+                </td>
+                <td>
+                    <input type="text" size="20" name="nom">
+                </td>
+            </tr>
+            <tr class="prenom">
+                <td>
+                    <p>Prénom</p>
+                </td>
+                <td>
+                    <input type="text" size="15" name="prenom">
+                </td>
+            </tr>
+            <tr class="mail">
+                <td>
+                    <p>Mail</p>
+                </td>
+                <td>
+                    <input type="text" size="30" name="mail">
+                </td>
+            </tr>
+            <tr class="mdp">
+                <td>
+                    <p>Mot de passe</p>
+                </td>
+                <td>
+                    <input type="password" size="25" name="mdp">
+                </td>
+            </tr>
+            </thead>
+            <tfoot>
+            <tr>
+                <td id="1" align="center" colspan="2">
+                    <input type="submit" value="Sign In" name="creerCompte"/>
+                    <input type="submit" value="Log In" name="seConnecter"/>
+                </td>
+            </tr>
+            </tfoot>
+        </table>
+    </form>
 </body>
 
 <?php
-
 if (isset($_POST['creerCompte'])){
    if ($_POST['nom'] != "" && $_POST['prenom'] != "" && $_POST['mail'] != "" && $_POST['mdp'] != ""){
        $nom = strtoupper($_POST['nom']);

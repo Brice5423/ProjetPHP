@@ -14,42 +14,39 @@ session_start();
 </head>
 
 <body>
+    <title>Se Connecter</title>
+    <form method="post">
+        <h2 align="center">Sign In</h2>
 
-<title>Se Connecter</title>
-<form method="post">
-    <h2 align="center">Sign In</h2>
-
-    <table align="center">
-        <thead>
-        <tr class="mail">
-            <td>
-                <p>Mail</p>
-            </td>
-            <td>
-                <input type="text" size="30" name="mail">
-            </td>
-        </tr>
-        <tr class="mdp">
-            <td>
-                <p>Mot de passe</p>
-            </td>
-            <td>
-                <input type="password" size="25" name="mdp">
-            </td>
-        </tr>
-        </thead>
-        <tfoot>
-        <tr>
-            <td id="1" align="center" colspan="2">
-                <input type="submit" value="Log In" name="seConnecter">
-                <input type="submit" value="Sign In" name="creerCompte"/>
-            </td>
-        </tr>
-        </tfoot>
-    </table>
-
-</form>
-
+        <table align="center">
+            <thead>
+            <tr class="mail">
+                <td>
+                    <p>Mail</p>
+                </td>
+                <td>
+                    <input type="text" size="30" name="mail">
+                </td>
+            </tr>
+            <tr class="mdp">
+                <td>
+                    <p>Mot de passe</p>
+                </td>
+                <td>
+                    <input type="password" size="25" name="mdp">
+                </td>
+            </tr>
+            </thead>
+            <tfoot>
+            <tr>
+                <td id="1" align="center" colspan="2">
+                    <input type="submit" value="Log In" name="seConnecter">
+                    <input type="submit" value="Sign In" name="creerCompte"/>
+                </td>
+            </tr>
+            </tfoot>
+        </table>
+    </form>
 </body>
 
 </html>
@@ -77,8 +74,6 @@ else if (isset($_POST['seConnecter'])){
         } else {
             echo "<script>alert('Le mail n\'existe pas ');</script>";
         }
-
-
     }
 }
 ?>
