@@ -10,6 +10,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" media="screen and (min-width:0px)" href="style/creerCompte.css">
+    <link rel="icon" type="images/x-icon" href="images/Venti_tete.png" />
 </head>
 
 <body>
@@ -24,7 +25,7 @@ session_start();
                         <p>Nom</p>
                     </td>
                     <td>
-                        <input type="text" size="30" name="nom">
+                        <input type="text" size="20" name="nom">
                     </td>
                 </tr>
                 <tr class="prenom">
@@ -32,7 +33,7 @@ session_start();
                         <p>Prénom</p>
                     </td>
                     <td>
-                        <input type="text" size="20" name="prenom">
+                        <input type="text" size="15" name="prenom">
                     </td>
                 </tr>
                 <tr class="mail">
@@ -40,7 +41,7 @@ session_start();
                         <p>Mail</p>
                     </td>
                     <td>
-                        <input type="text" size="40" name="mail">
+                        <input type="text" size="30" name="mail">
                     </td>
                 </tr>
                 <tr class="mdp">

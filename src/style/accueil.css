@@ -19,6 +19,18 @@ header {
     background: linear-gradient(to right, #131313, #2e3532);
 }
 
+header img.Venti {
+    position: absolute;
+    top: -5px;
+    left: 0;
+}
+
+header img.Venti2 {
+    position: absolute;
+    top: -5px;
+    left: 0;
+}
+
 h1.titre_site {
 
     text-align: center;

@@ -10,30 +10,30 @@ $objPdo->query('SET NAMES utf8');
 
 <head>
     <meta charset="UTF-8">
-    <title>Happy News</title>
+    <title>Les Nouvelles du Gigolo</title>
     <link rel="stylesheet" type="text/css" media="screen and (min-width:0px)" href="style/accueil.css">
+    <link rel="icon" type="images/x-icon" href="images/Venti_tete.png" />
 </head>
 <body>
 <form method="post" action = "accueil.php">
     <header>
-        <title>Happy News</title>
-        <h1 class="titre_site">HAPPY NEWS</h1>
-
+        <h1 class="titre_site">LES NOUVELLES DU GIGOLO</h1>
         <nav class="inscrit">
             <ul>
                 <?php
                 if (isset($_SESSION['mail']) && isset($_SESSION['mdp'])){
-                    echo "<div class=\"menu\">
+                    echo "<img class=\"Venti\" src=\"images/Venti_entier_2.png\" alt=\"\" width=\"120\" height=\"195\"/>
+                        <div class=\"menu\">
                             <a href=\"news.php\">
                                 <article class=\"left\">
-                                    CREER NEWS
+                                    CREER NOUVELLES
                                 </article>
                             </a>
-                         </div>
+                        </div>
                         <div class=\"menu2\">
                             <a href=\"\">
                                 <article class=\"middle\">
-                                     MES NEWS
+                                     MES NOUVELLES
                                 </article>
                             </a>
                         </div>
@@ -46,7 +46,8 @@ $objPdo->query('SET NAMES utf8');
                         </li>";
                 }
                 else {
-                    echo "<li class=\"inscrit\">
+                    echo "<img class=\"Venti2\" src=\"images/Venti_entier_2.png\" alt=\"\" width=\"90\" height=\"158\"/>
+                          <li class=\"inscrit\">
                             <a href=\"creerCompte.php\">Sign Up</a>
                           </li>
                           <li class=\"connect\">
@@ -87,6 +88,7 @@ $objPdo->query('SET NAMES utf8');
         <li><a title="Afficher la slide 3" href="#sl_i3">Slide 3</a></li>
         <li><a title="Afficher la slide 4" href="#sl_i4">Slide 4</a></li>
     </ul>
+
     <table align="center">
         <tr>
             <td class="btnTri" align="center" colspan="2">
@@ -98,6 +100,23 @@ $objPdo->query('SET NAMES utf8');
         </tr>
     </table>
 
+
+    <table>
+        <?php
+
+        ?>
+        <tr>
+            <td>
+                <!--titre / Auteur / Date poste-->
+            </td>
+            <td>
+                <!--Nom theme-->
+            </td>
+            <td>
+                <!--Contenu-->
+            </td>
+        </tr>
+    </table>
 </form>
 
 

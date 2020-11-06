@@ -10,6 +10,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" media="screen and (min-width:0px)" href="style/seConnecter.css">
+    <link rel="icon" type="images/x-icon" href="images/Venti_tete.png" />
 </head>
 
 <body>
@@ -25,7 +26,7 @@ session_start();
                 <p>Mail</p>
             </td>
             <td>
-                <input type="text" size="40" name="mail">
+                <input type="text" size="30" name="mail">
             </td>
         </tr>
         <tr class="mdp">
