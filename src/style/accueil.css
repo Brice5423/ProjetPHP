@@ -9,13 +9,14 @@
 body {
     font-family: Ubuntu;
     margin: 0;
+    background: linear-gradient(to right, #bebebe, #ffffff);
 }
 
 /* Header */
 
 header {
     padding: 0.2%;
-    background: linear-gradient(to right, #131313, #323232);
+    background: linear-gradient(to right, #131313, #2e3532);
 }
 
 h1.titre_site {
@@ -23,6 +24,7 @@ h1.titre_site {
     text-align: center;
     margin: auto;
     padding-top: 30px;
+    padding-bottom: 50px;
     font-size: 40px;
     color: #FFFFFF;
 }
@@ -32,8 +34,18 @@ h3 {
 }
 
 div.menu {
-    margin: 5% auto 0 auto;
-    width: 49.9%;
+
+    position: relative;
+    width: 49%;
+    color: lightgrey;
+    display: inline-block;
+    text-align: center;
+}
+
+div.menu2 {
+
+    position: relative;
+    width: 49%;
     color: lightgrey;
     display: inline-block;
     text-align: center;
@@ -50,11 +62,23 @@ div.menu a {
     color: darkgrey;
 }
 
+div.menu2 a {
+    color: darkgrey;
+}
+
 div.menu a:link {
     text-decoration: none;
 }
 
+div.menu2 a:link {
+    text-decoration: none;
+}
+
 div.menu a:hover {
+    color: #FFFFFF;
+}
+
+div.menu2 a:hover {
     color: #FFFFFF;
 }
 
@@ -346,8 +370,13 @@ nav.inscrit ul li a {
 
 table tr td input {
     height: 40px;
-    width: 100px;
-    background: linear-gradient(to right, #131313, #323232);
+    width: 130px;
+    background: linear-gradient(to right, #131313, #3b5148);
     color:white;
     border: none;
+}
+
+.btnTri {
+    font-family: Ubuntu;
+    font-weight: bold;
 }

@@ -6,12 +6,17 @@
 body {
     font-family: Ubuntu;
     padding: 80px;
-    color: #ffffff;
-    background: linear-gradient(to right, #131313, #323232);
+
+    background: linear-gradient(to right, #c3c3c3, #eeeeee);
+}
+
+h2 {
+    color: #262626;
+    font-weight: bold;
 }
 
 .mail {
-    background-color: #262626;
+    background: linear-gradient(to right, #131313, #2e3532);
     color: lightgray;
 
 }
@@ -21,7 +26,7 @@ body {
 }
 
 .mdp {
-    background-color: #262626;
+    background: linear-gradient(to right, #131313, #2e3532);
     color: lightgray;
 }
 
@@ -36,7 +41,7 @@ tfoot tr td {
 tfoot {
     border-collapse: collapse;
     border: 1px solid black;
-    background-color: #1a1a1a;
+    background-color: #131313;
 }
 
 table {
@@ -45,7 +50,7 @@ table {
 }
 
 tfoot tr td input {
-    background-color: #1a1a1a;
+    background-color: #131313;
     color: lightgray;
     border: none;
 }

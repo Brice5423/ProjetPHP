@@ -36,32 +36,42 @@ input:active, input:focus {
     padding: 15px;
 }
 
-.prenom {
+.theme {
     background: linear-gradient(to right, #131313, #2e3532);
     color: lightgray;
 }
 
-.prenom td {
+.theme td {
     padding: 15px;
 }
 
-.mail {
+select {
+    background: transparent;
+    color: #FFFFFF;
+    outline: none;
+    border: none;
+    width: 245px;
+    height: 30px;
+}
+
+.contenu {
     background: linear-gradient(to right, #131313, #2e3532);
     color: lightgray;
-
 }
 
-.mail td {
+.contenu td {
     padding: 15px;
 }
 
-.mdp {
-    background: linear-gradient(to right, #131313, #2e3532);
-    color: lightgray;
-}
-
-.mdp td {
-    padding: 15px;
+textarea {
+    resize: none;
+    width: 240px;
+    height: 150px;
+    background : transparent;
+    border: none;
+    outline: none;
+    border-bottom: #FFFFFF 2px solid;
+    color : #FFFFFF;
 }
 
 tfoot tr td {

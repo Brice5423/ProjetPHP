@@ -18,28 +18,32 @@ $objPdo->query('SET NAMES utf8');
     <header>
         <title>Happy News</title>
         <h1 class="titre_site">HAPPY NEWS</h1>
-        <div class="menu">
-            <a href="">
-                <article class="left">
-                    CREER NEWS
-                </article>
-            </a>
-        </div>
-        <div class="menu">
-            <a href="">
-                <article class="middle">
-                    MES NEWS
-                </article>
-            </a>
-        </div>
+
         <nav class="inscrit">
             <ul>
                 <?php
                 if (isset($_SESSION['mail']) && isset($_SESSION['mdp'])){
-                    echo "<li class=\"inscrit\">
-                                <a href=\"javascript:void(0);\" onclick='seDeco();'>Sign out</a>
-                                <script type='text/javascript' src='popup.js'></script>
-                          </li>";
+                    echo "<div class=\"menu\">
+                            <a href=\"news.php\">
+                                <article class=\"left\">
+                                    CREER NEWS
+                                </article>
+                            </a>
+                         </div>
+                        <div class=\"menu2\">
+                            <a href=\"\">
+                                <article class=\"middle\">
+                                     MES NEWS
+                                </article>
+                            </a>
+                        </div>
+                        <li class=\"inscrit\">
+                            <a href=\"javascript:void(0);\" onclick='seDeco();'>Sign out</a>
+                            <script type='text/javascript' src='popup.js'></script>
+                        </li>";
+                    echo "<li class=\"connect\">
+                        <a>".$_SESSION['prenom'] . " " . $_SESSION['nom']."</a>
+                        </li>";
                 }
                 else {
                     echo "<li class=\"inscrit\">
@@ -86,10 +90,10 @@ $objPdo->query('SET NAMES utf8');
     <table align="center">
         <tr>
             <td class="btnTri" align="center" colspan="2">
-                <input type="submit" value="Thème" name="triTheme"/>
+                <input type="submit" value="THEME" name="triTheme"/>
             </td>
             <td class="btnTri" align="center" colspan="2">
-                <input type="submit" value="Date" name="triDate"/>
+                <input type="submit" value="DATE" name="triDate"/>
             </td>
         </tr>
     </table>
@@ -105,14 +109,6 @@ $objPdo->query('SET NAMES utf8');
 
 3 a l'aide d'un foreach, afficher les articles de la base
 -->
-
-
-<?php
-
-if (isset($_SESSION['mail']) && isset($_SESSION['mdp'])){
-    echo "Bonjour " . $_SESSION['nom'] . " " . $_SESSION['prenom'];
-}
-?>
 
 </body>
 </html>
