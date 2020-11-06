@@ -32,7 +32,7 @@ $objPdo->query('SET NAMES utf8');
                                 </a>
                             </div>
                             <div class=\"menu2\">
-                                <a href=\"\">
+                                <a href=\"mesNews.php\">
                                     <article class=\"middle\">
                                          MES NOUVELLES
                                     </article>
@@ -143,12 +143,3 @@ $objPdo->query('SET NAMES utf8');
 </body>
 
 </html>
-
-<!--
-1 faire un formulaire avec les boutons submit pour les tris (date, thème, ...)
-
-2 dans des balises php faire des if sur les isset sur les boutons submit
-    stocker dans la meme var String les requetes sql
-
-3 a l'aide d'un foreach, afficher les articles de la base
--->
