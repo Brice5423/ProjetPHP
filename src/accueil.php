@@ -102,17 +102,17 @@ $objPdo->query('SET NAMES utf8');
         </table>
 
 
-        <table>
+        <table class="news" align="center">
             <?php
             function generationLigne($row) {
                 echo "<tr>
-                        <td>
+                        <td class=\"gauche\">
                             <!--titre / Auteur / Date poste-->
                             <h3>".$row["titrenews"]."</h3> (".$row["description"].") <br/>
-                            <h5>".$row["nom"]. " " .$row["prenom"]."</h5><br/>
-                            <h6>".$row["datenews"]."</h6>
+                            <p>".$row["nom"]. " " .$row["prenom"]."</p>
+                            <p>".$row["datenews"]."</p>
                         </td>
-                        <td>
+                        <td class=\"contenu\">
                             <!--Contenu-->
                             <p>".$row["textenews"]."</p>
                         </td>

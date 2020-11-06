@@ -9,6 +9,7 @@
 body {
     font-family: Ubuntu;
     margin: 0;
+    margin-bottom: 50px;
     background: linear-gradient(to right, #bebebe, #ffffff);
 }
 
@@ -391,5 +392,29 @@ table tr td input {
 .btnTri {
     font-family: Ubuntu;
     font-weight: bold;
+    padding-bottom: 20px;
 }
 
+.news {
+    border-spacing: 0px 40px;
+}
+
+.news tr {
+    background: linear-gradient(to right, #131313, #3b5148);
+    color: #FFFFFF;
+}
+
+.news tr td {
+    text-align: center;
+}
+
+.news tr td.gauche {
+    width: 300px;
+    height: 200px;
+}
+
+.news tr td.contenu {
+    padding-right: 10px;
+    width: 500px;
+    height: 200px;
+}
