@@ -65,27 +65,32 @@ session_start();
         </table>
     </form>
 </body>
-
+</html>
 <?php
 if (isset($_POST['creerCompte'])){
-   if ($_POST['nom'] != "" && $_POST['prenom'] != "" && $_POST['mail'] != "" && $_POST['mdp'] != ""){
-       $nom = strtoupper($_POST['nom']);
-       $prenom = $_POST['prenom'];
-       $mail = $_POST['mail'];
-       $mdp = $_POST['mdp'];
+    if ($_POST['nom'] != "" && $_POST['prenom'] != "" && $_POST['mail'] != "" && $_POST['mdp'] != ""){
+        $nom = strtoupper($_POST['nom']);
+        $prenom = $_POST['prenom'];
+        $mail = $_POST['mail'];
+        $mdp = $_POST['mdp'];
 
-       $result = $objPdo->query("insert into redacteur(nom, prenom, adressemail, motdepasse) values ('$nom', '$prenom', '$mail', '$mdp')");
-       $result = $objPdo->query("select * from redacteur where adressemail = '$mail' and motdepasse = '$mdp'");
-       foreach ($result as $row ) {
-           $_SESSION['id'] = $row['idredacteur'];
-       }
-       $_SESSION['nom'] = $nom;
-       $_SESSION['prenom'] = $prenom;
-       $_SESSION['mail'] = $mail;
-       $_SESSION['mdp'] = $mdp;
+        $result = $objPdo->query("insert into redacteur(nom, prenom, adressemail, motdepasse) values ('$nom', '$prenom', '$mail', '$mdp')");
+        $result = $objPdo->query("select * from redacteur where adressemail = '$mail' and prenom = '$prenom' and adressemail = '$mail' and motdepasse = '$mdp'");
+        if ($result->rowCount() > 0) {
+            foreach ($result as $row) {
+                $_SESSION['id'] = $row['idredacteur'];
+            }
+            $_SESSION['nom'] = $nom;
+            $_SESSION['prenom'] = $prenom;
+            $_SESSION['mail'] = $mail;
+            $_SESSION['mdp'] = $mdp;
 
-       header("Location:accueil.php");
-   }
+            header("Location:accueil.php");
+        }else {
+            echo "<script>alert('Le mail éxiste déjà ');</script>";
+        }
+    }
+
 }
 
 if (isset($_POST['seConnecter'])){
@@ -95,5 +100,3 @@ if (isset($_POST['retour'])){
     header("Location:accueil.php");
 }
 ?>
-
-</html>
