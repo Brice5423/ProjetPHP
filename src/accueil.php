@@ -21,14 +21,14 @@ $objPdo->query('SET NAMES utf8');
         <div class="menu">
             <a href="">
                 <article class="left">
-                    NEWS
+                    CREER NEWS
                 </article>
             </a>
         </div>
         <div class="menu">
             <a href="">
                 <article class="middle">
-                    NEWS
+                    MES NEWS
                 </article>
             </a>
         </div>
@@ -83,6 +83,17 @@ $objPdo->query('SET NAMES utf8');
         <li><a title="Afficher la slide 3" href="#sl_i3">Slide 3</a></li>
         <li><a title="Afficher la slide 4" href="#sl_i4">Slide 4</a></li>
     </ul>
+    <table align="center">
+        <tr>
+            <td class="btnTri" align="center" colspan="2">
+                <input type="submit" value="Thème" name="triTheme"/>
+            </td>
+            <td class="btnTri" align="center" colspan="2">
+                <input type="submit" value="Date" name="triDate"/>
+            </td>
+        </tr>
+    </table>
+
 </form>
 
 

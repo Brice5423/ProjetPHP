@@ -343,3 +343,11 @@ nav.inscrit ul li a {
         left: 0;
     }
 }
+
+table tr td input {
+    height: 40px;
+    width: 100px;
+    background: linear-gradient(to right, #131313, #323232);
+    color:white;
+    border: none;
+}

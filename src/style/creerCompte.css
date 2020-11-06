@@ -67,12 +67,3 @@ tfoot tr td input {
     color: lightgray;
     border: none;
 }
-
-tfoot tr td a:link {
-    text-decoration: none;
-}
-
-tfoot tr td a {
-    color: lightgray;
-    font-size: 14px;
-}
