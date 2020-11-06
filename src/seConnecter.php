@@ -39,9 +39,10 @@ session_start();
             </thead>
             <tfoot>
             <tr>
-                <td id="1" align="center" colspan="2">
-                    <input type="submit" value="Log In" name="seConnecter">
-                    <input type="submit" value="Sign In" name="creerCompte"/>
+                <td id="1" align="center" colspan="3">
+                    <input type="submit" value="Valider" name="seConnecter">
+                    <input type="submit" value="Sign Up" name="creerCompte"/>
+                    <input type="submit" value="Retour" name="retour"/>
                 </td>
             </tr>
             </tfoot>
@@ -75,5 +76,8 @@ else if (isset($_POST['seConnecter'])){
             echo "<script>alert('Le mail n\'existe pas ');</script>";
         }
     }
+}
+if (isset($_POST['retour'])){
+    header("Location:accueil.php");
 }
 ?>

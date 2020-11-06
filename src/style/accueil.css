@@ -49,7 +49,7 @@ h3 {
 div.menu {
 
     position: relative;
-    width: 49%;
+    width: 48.76%;
     color: lightgrey;
     display: inline-block;
     text-align: center;
@@ -393,6 +393,7 @@ table tr td input {
     font-family: Ubuntu;
     font-weight: bold;
     padding-bottom: 20px;
+    padding-top: 20px;
 }
 
 .news {
@@ -418,3 +419,4 @@ table tr td input {
     width: 500px;
     height: 200px;
 }
+

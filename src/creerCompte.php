@@ -55,9 +55,10 @@ session_start();
             </thead>
             <tfoot>
             <tr>
-                <td id="1" align="center" colspan="2">
-                    <input type="submit" value="Sign In" name="creerCompte"/>
-                    <input type="submit" value="Log In" name="seConnecter"/>
+                <td align="center" colspan="3">
+                    <input type="submit" value="Valider" name="creerCompte"/>
+                    <input type="submit" value="Sign In" name="seConnecter"/>
+                    <input type="submit" value="Retour" name="retour"/>
                 </td>
             </tr>
             </tfoot>
@@ -89,6 +90,9 @@ if (isset($_POST['creerCompte'])){
 
 if (isset($_POST['seConnecter'])){
     header("Location:seConnecter.php");
+}
+if (isset($_POST['retour'])){
+    header("Location:accueil.php");
 }
 ?>
 
