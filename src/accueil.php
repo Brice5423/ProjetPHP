@@ -103,19 +103,27 @@ $objPdo->query('SET NAMES utf8');
 
     <table>
         <?php
+        $result = $objPdo->query("select * from news n, redacteur r, theme t where n.idtheme = t.idtheme and n.idredacteur = r.idredacteur order by n.datenews");
+        foreach ($result as $row ) {
+            echo "<tr>
+                    <td>
+                        <!--titre / Auteur / Date poste-->
+                        <h3>".$row["titrenews"]."</h3><br/>
+                        <h4>".$row["nom"]. " " .$row["prenom"]."</h4><br/>
+                        <h5>".$row["datenews"]."</h5>
+                    </td>
+                    <td>
+                        <!--Nom theme-->
+                        
+                    </td>
+                    <td>
+                        <!--Contenu-->
+                        
+                    </td>
+                </tr>";
 
+        }
         ?>
-        <tr>
-            <td>
-                <!--titre / Auteur / Date poste-->
-            </td>
-            <td>
-                <!--Nom theme-->
-            </td>
-            <td>
-                <!--Contenu-->
-            </td>
-        </tr>
     </table>
 </form>
 
