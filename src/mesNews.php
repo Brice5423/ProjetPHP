@@ -10,7 +10,7 @@ $objPdo->query('SET NAMES utf8');
 
 <head>
     <meta charset="UTF-8">
-    <title>Les Nouvelles du Gigolo</title>
+    <title>Les Nouvelles du JGolo</title>
     <link rel="stylesheet" type="text/css" media="screen and (min-width:0px)" href="style/accueil.css">
     <link rel="icon" type="images/x-icon" href="images/Venti_tete.png" />
 </head>
@@ -18,7 +18,7 @@ $objPdo->query('SET NAMES utf8');
 <body>
     <form method="post" action = "mesNews.php">
         <header>
-            <h1 class="titre_site">MES NOUVELLES DU GIGOLO</h1>
+            <h1 class="titre_site">MES NOUVELLES DU JGOLO</h1>
             <nav class="inscrit">
                 <ul>
                     <?php

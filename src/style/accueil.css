@@ -9,7 +9,6 @@
 body {
     font-family: Ubuntu;
     margin: 0;
-    margin-bottom: 50px;
     background: linear-gradient(to right, #bebebe, #ffffff);
 }
 
@@ -420,3 +419,10 @@ table tr td input {
     height: 200px;
 }
 
+footer {
+    background: linear-gradient(to right, #131313, #3b5148);
+    color: #FFFFFF;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
