@@ -120,19 +120,19 @@ $objPdo->query('SET NAMES utf8');
             }
 
             if (isset($_POST['triDate'])) {
-                $result = $objPdo->query("select * from news n, redacteur r, theme t where n.idtheme = t.idtheme and n.idredacteur = r.idredacteur order by n.datenews");
+                $result = $objPdo->query("select * from news n, redacteur r, theme t where n.idtheme = t.idtheme and n.idredacteur = r.idredacteur order by n.datenews DESC");
                 foreach ($result as $row) {
                     generationLigne($row);
                 }
             }
             else if (isset($_POST['triTheme'])) {
-                $result = $objPdo->query("select * from news n, redacteur r, theme t where n.idtheme = t.idtheme and n.idredacteur = r.idredacteur order by t.description and n.datenews");
+                $result = $objPdo->query("select * from news n, redacteur r, theme t where n.idtheme = t.idtheme and n.idredacteur = r.idredacteur order by t.description ASC, n.datenews DESC");
                 foreach ($result as $row) {
                     generationLigne($row);
                 }
             }
             else {
-                $result = $objPdo->query("select * from news n, redacteur r, theme t where n.idtheme = t.idtheme and n.idredacteur = r.idredacteur order by n.datenews");
+                $result = $objPdo->query("select * from news n, redacteur r, theme t where n.idtheme = t.idtheme and n.idredacteur = r.idredacteur order by n.datenews DESC");
                 foreach ($result as $row) {
                     generationLigne($row);
                 }
