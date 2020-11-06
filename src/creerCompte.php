@@ -74,9 +74,11 @@ if (isset($_POST['creerCompte'])){
         $mail = $_POST['mail'];
         $mdp = $_POST['mdp'];
 
-        $result = $objPdo->query("insert into redacteur(nom, prenom, adressemail, motdepasse) values ('$nom', '$prenom', '$mail', '$mdp')");
-        $result = $objPdo->query("select * from redacteur where adressemail = '$mail' and prenom = '$prenom' and adressemail = '$mail' and motdepasse = '$mdp'");
+        $result = $objPdo->query("select * from redacteur where adressemail = '$mail'");
         if ($result->rowCount() > 0) {
+            echo "<script>alert('Le mail existe déjà ');</script>";
+        }else {
+            $result = $objPdo->query("insert into redacteur(nom, prenom, adressemail, motdepasse) values ('$nom', '$prenom', '$mail', '$mdp')");
             foreach ($result as $row) {
                 $_SESSION['id'] = $row['idredacteur'];
             }
@@ -86,11 +88,8 @@ if (isset($_POST['creerCompte'])){
             $_SESSION['mdp'] = $mdp;
 
             header("Location:accueil.php");
-        }else {
-            echo "<script>alert('Le mail éxiste déjà ');</script>";
         }
     }
-
 }
 
 if (isset($_POST['seConnecter'])){
