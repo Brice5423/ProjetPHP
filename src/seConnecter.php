@@ -72,7 +72,8 @@ else if (isset($_POST['seConnecter'])){
             $_SESSION['mdp'] = $mdp;
 
             header("Location:accueil.php");
-        } else {
+        }
+        else {
             echo "<script>alert('Le mail n\'existe pas ou le mot de passe est incorrect');</script>";
         }
     }

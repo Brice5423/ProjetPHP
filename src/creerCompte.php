@@ -65,7 +65,9 @@ session_start();
         </table>
     </form>
 </body>
+
 </html>
+
 <?php
 if (isset($_POST['creerCompte'])){
     if ($_POST['nom'] != "" && $_POST['prenom'] != "" && $_POST['mail'] != "" && $_POST['mdp'] != ""){
