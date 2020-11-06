@@ -112,7 +112,7 @@ $objPdo->query('SET NAMES utf8');
         </table>
     </form>
 
-    <footer>
+    <footer class="foot">
         <p>Copyright 2020 COLLIGNON Nicolas / ORLIANGE Brice - Tous droits réservés</p>
     </footer>
 </body>

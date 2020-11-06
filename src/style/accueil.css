@@ -426,3 +426,9 @@ footer {
     padding-top: 10px;
     padding-bottom: 10px;
 }
+
+.foot {
+    margin-top: 317px;
+    position: relative;
+    bottom: 0;
+}
