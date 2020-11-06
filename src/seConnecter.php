@@ -73,7 +73,7 @@ else if (isset($_POST['seConnecter'])){
 
             header("Location:accueil.php");
         } else {
-            echo "<script>alert('Le mail n\'existe pas ');</script>";
+            echo "<script>alert('Le mail n\'existe pas ou le mot de passe est incorrect');</script>";
         }
     }
 }
