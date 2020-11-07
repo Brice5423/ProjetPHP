@@ -66,8 +66,10 @@ if (isset($_POST['valider'])){
         $idRedacteur = $_SESSION['id'];
 
         $themeNews = $_POST['themeNews'];
-        $idTheme = $objPdo->query("select idtheme from theme where description = '$themeNews'");
-
+        $resultIdTheme = $objPdo->query("select idtheme from theme where description = '$themeNews'");
+        foreach ($resultIdTheme as $row){
+            $idTheme = $row['idtheme'];
+        }
         $result = $objPdo->query("insert into news(idtheme, titrenews, datenews, textenews, idredacteur) values('$idTheme', '$titreNews', '$dateNews', '$contenuNews', '$idRedacteur') ");
 
         header("Location:accueil.php");
