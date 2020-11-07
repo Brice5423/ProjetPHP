@@ -2,6 +2,7 @@
 include ("database/connection.php");
 $objPdo = connect();
 session_start();
+$objPdo->query('SET NAMES utf8');
 ?>
 
 <!DOCTYPE html>
