@@ -66,16 +66,16 @@ $objPdo->query('SET NAMES utf8');
                     <figure>
                         <img src="images/shingeki-no-kyojin-temporada-4-min.jpg" alt="" width="640" height="310" />
                         <figcaption>La nouvelle Saison de Shingeki No Kiojin arrive le 4 Décembre</figcaption>
-                    </figure><!--
-                --><figure>
+                    </figure>
+                    <figure>
                         <img src="images/geforce-rtx-3080-design-exploded-001.jpg" alt="" width="640" height="310" />
                         <figcaption>La nouvelle RTX 3080 est sortie le 17 Septembre</figcaption>
-                    </figure><!--
-                --><figure>
+                    </figure>
+                    <figure>
                         <img src="images/raw-accept.jpg" alt="" width="640" height="310" />
                         <figcaption>Call Of Duty: Cold War sortira le 13 Novembre 2020</figcaption>
-                    </figure><!--
-                --><figure>
+                    </figure>
+                    <figure>
                         <img src="images/Genshin_SOP_-Cover_EN-1280.jpg" alt="" width="640" height="310" />
                         <figcaption>Genshin Impact est sorti sur PC et les Consoles</figcaption>
                     </figure>

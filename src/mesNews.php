@@ -70,6 +70,9 @@ $objPdo->query('SET NAMES utf8');
                                 <input type=\"submit\" value=\"THEME\" name=\"triTheme\"/>
                             </td>
                             <td class=\"btnTri\" align=\"center\" colspan=\"2\">
+                                <input type=\"submit\" value=\"THEME ET DATE\" name=\"triThemeEtDate\"/>
+                            </td>
+                            <td class=\"btnTri\" align=\"center\" colspan=\"2\">
                                 <input type=\"submit\" value=\"DATE\" name=\"triDate\"/>
                             </td>
                         </tr>
@@ -102,8 +105,17 @@ $objPdo->query('SET NAMES utf8');
                     }
                 }
             }
-            else if (isset($_POST['triTheme'])) {
+            else if (isset($_POST['triThemeEtDate'])) {
                 $result = $objPdo->query("select * from news n, redacteur r, theme t where n.idtheme = t.idtheme and n.idredacteur = r.idredacteur and adressemail = '$mail' and motdepasse = '$mdp' order by t.description ASC, n.datenews DESC");
+                if (isset($result)) {
+                    generationBoutonFiltre();
+                    foreach ($result as $row) {
+                        generationLigne($row);
+                    }
+                }
+            }
+            else if (isset($_POST['triTheme'])) {
+                $result = $objPdo->query("select * from news n, redacteur r, theme t where n.idtheme = t.idtheme and n.idredacteur = r.idredacteur and adressemail = '$mail' and motdepasse = '$mdp' order by t.description ASC");
                 if (isset($result)) {
                     generationBoutonFiltre();
                     foreach ($result as $row) {
