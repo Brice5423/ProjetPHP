@@ -33,7 +33,7 @@ session_start();
                     <p>Thème</p>
                 </td>
                 <td>
-                    <select name="theme"><option>fjf</option></select>
+                    <select name="themeNews"><option>fjf</option></select>
                 </td>
             </tr>
             <tr class="contenu">
@@ -41,7 +41,7 @@ session_start();
                     <p>Contenu</p>
                 </td>
                 <td>
-                    <textarea name="contenu"></textarea>
+                    <textarea name="contenuNews"></textarea>
                 </td>
             </tr>
             </thead>
@@ -59,20 +59,16 @@ session_start();
 
 <?php
 if (isset($_POST['valider'])){
-    if ($_POST['nomNews'] != "" && $_POST['theme'] != "" && $_POST['contenu'] != ""){
-        $nomNews = strtoupper($_POST['nomNews']);
-        $theme = $_POST['theme'];
-        $contenu = $_POST['contenu'];
+    if ($_POST['nomNews'] != "" && $_POST['themeNews'] != "" && $_POST['contenuNews'] != ""){
+        $titreNews = strtoupper($_POST['nomNews']);
+        $dateNews = date("Y-m-d H:i:s");
+        $contenuNews = $_POST['contenuNews'];
+        $idRedacteur = $_SESSION['id'];
 
+        $themeNews = $_POST['themeNews'];
+        $idTheme = $objPdo->query("select idtheme from theme where description = '$themeNews'");
 
-        $result = $objPdo->query("insert into theme(idtheme, description) values ('$nomNews', '$theme', '$contenu')");
-        $result = $objPdo->query("select * from theme");
-        foreach ($result as $row ) {
-            $_SESSION['idtheme'] = $row['description'];
-        }
-        $_SESSION['nomNews'] = $nomNews;
-        $_SESSION['prenom'] = $theme;
-        $_SESSION['mail'] = $contenu;
+        $result = $objPdo->query("insert into news(idtheme, titrenews, datenews, textenews, idredacteur) values('$idTheme', '$titreNews', '$dateNews', '$contenuNews', '$idRedacteur') ");
 
         header("Location:accueil.php");
     }

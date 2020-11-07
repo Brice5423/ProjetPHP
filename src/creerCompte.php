@@ -80,7 +80,7 @@ if (isset($_POST['creerCompte'])){
         if ($result->rowCount() > 0) {
             echo "<script>alert('Le mail existe déjà ');</script>";
         }else {
-            $result = $objPdo->query("insert into redacteur(nom, prenom, adressemail, motdepasse) values ('$nom', '$prenom', '$mail', '$mdp')");
+            $result = $objPdo->query("insert into redacteur(nom, prenom, adressemail, motdepasse) values('$nom', '$prenom', '$mail', '$mdp')");
             foreach ($result as $row) {
                 $_SESSION['id'] = $row['idredacteur'];
             }
