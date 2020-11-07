@@ -33,7 +33,18 @@ session_start();
                     <p>Thème</p>
                 </td>
                 <td>
-                    <select name="themeNews"><option>fjf</option></select>
+                    <select name=\"themeNews\">
+                        <?php
+                        function listTheme($nomTheme) {
+                            echo "<option>".$nomTheme."</option>";
+                        }
+
+                        $result = $objPdo->query("select description from theme");
+                        foreach ($result as $row) {
+                            listTheme($row['description']);
+                        }
+                        ?>
+                    </select>
                 </td>
             </tr>
             <tr class="contenu">
@@ -70,6 +81,7 @@ if (isset($_POST['valider'])){
         foreach ($resultIdTheme as $row){
             $idTheme = $row['idtheme'];
         }
+
         $result = $objPdo->query("insert into news(idtheme, titrenews, datenews, textenews, idredacteur) values('$idTheme', '$titreNews', '$dateNews', '$contenuNews', '$idRedacteur') ");
 
         header("Location:accueil.php");
