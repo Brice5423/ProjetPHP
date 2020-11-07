@@ -60,25 +60,20 @@ $objPdo->query('SET NAMES utf8');
             </nav>
         </header>
 
+        <table align="center">
+            <tr>
+                <td class="btnTri" align="center" colspan="2">
+                    <input type="submit" value="THEME" name="triTheme"/>
+                </td>
+                <td class="btnTri" align="center" colspan="2">
+                    <input type="submit" value="DATE" name="triDate"/>
+                </td>
+            </tr>
+        </table>
+
+
         <table class="news" align="center">
             <?php
-
-            function generationBoutonFiltre() {
-                echo "<table align=\"center\">
-                        <tr>
-                            <td class=\"btnTri\" align=\"center\" colspan=\"2\">
-                                <input type=\"submit\" value=\"THEME\" name=\"triTheme\"/>
-                            </td>
-                            <td class=\"btnTri\" align=\"center\" colspan=\"2\">
-                                <input type=\"submit\" value=\"THEME ET DATE\" name=\"triThemeEtDate\"/>
-                            </td>
-                            <td class=\"btnTri\" align=\"center\" colspan=\"2\">
-                                <input type=\"submit\" value=\"DATE\" name=\"triDate\"/>
-                            </td>
-                        </tr>
-                    </table>";
-            }
-
             function generationLigne($row) {
                 echo "<tr>
                         <td  class=\"gauche\">
@@ -91,49 +86,31 @@ $objPdo->query('SET NAMES utf8');
                             <p>".$row["textenews"]."</p>
                         </td>
                     </tr>";
-            }
+                }
 
-            $mail = $_SESSION['mail'];
-            $mdp = $_SESSION['mdp'];
+                $mail = $_SESSION['mail'];
+                $mdp = $_SESSION['mdp'];
 
-            if (isset($_POST['triDate'])) {
-                $result = $objPdo->query("select * from news n, redacteur r, theme t where n.idtheme = t.idtheme and n.idredacteur = r.idredacteur and adressemail = '$mail' and motdepasse = '$mdp' order by n.datenews DESC");
-                if (isset($result)) {
-                    generationBoutonFiltre();
+                if (isset($_POST['triDate'])) {
+                    $result = $objPdo->query("select * from news n, redacteur r, theme t where n.idtheme = t.idtheme and n.idredacteur = r.idredacteur and adressemail = '$mail' and motdepasse = '$mdp' order by n.datenews DESC");
                     foreach ($result as $row) {
                         generationLigne($row);
                     }
                 }
-            }
-            else if (isset($_POST['triThemeEtDate'])) {
-                $result = $objPdo->query("select * from news n, redacteur r, theme t where n.idtheme = t.idtheme and n.idredacteur = r.idredacteur and adressemail = '$mail' and motdepasse = '$mdp' order by t.description ASC, n.datenews DESC");
-                if (isset($result)) {
-                    generationBoutonFiltre();
+                else if (isset($_POST['triTheme'])) {
+                    $result = $objPdo->query("select * from news n, redacteur r, theme t where n.idtheme = t.idtheme and n.idredacteur = r.idredacteur and adressemail = '$mail' and motdepasse = '$mdp' order by t.description ASC, n.datenews DESC");
                     foreach ($result as $row) {
                         generationLigne($row);
                     }
                 }
-            }
-            else if (isset($_POST['triTheme'])) {
-                $result = $objPdo->query("select * from news n, redacteur r, theme t where n.idtheme = t.idtheme and n.idredacteur = r.idredacteur and adressemail = '$mail' and motdepasse = '$mdp' order by t.description ASC");
-                if (isset($result)) {
-                    generationBoutonFiltre();
+                else {
+                    $result = $objPdo->query("select * from news n, redacteur r, theme t where n.idtheme = t.idtheme and n.idredacteur = r.idredacteur and adressemail = '$mail' and motdepasse = '$mdp' order by n.datenews DESC");
                     foreach ($result as $row) {
                         generationLigne($row);
                     }
                 }
-            }
-            else {
-                $result = $objPdo->query("select * from news n, redacteur r, theme t where n.idtheme = t.idtheme and n.idredacteur = r.idredacteur and adressemail = '$mail' and motdepasse = '$mdp' order by n.datenews DESC");
-                if (isset($result)) {
-                    generationBoutonFiltre();
-                    foreach ($result as $row) {
-                        generationLigne($row);
-                    }
-                }
-            }
-            ?>
-        </table>
+                ?>
+            </table>
     </form>
 
     <footer class="foot">
