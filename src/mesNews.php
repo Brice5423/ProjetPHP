@@ -76,7 +76,7 @@ $objPdo->query('SET NAMES utf8');
                 <?php
                 function generationLigne($row) {
                     echo "<form method = \"post\" action = \"mesNews.php\">";
-                    $idNews = $row['idnews'];
+                    $_POST['idNews'] = $row['idnews'];
                     echo "<tr>
                             <td  class=\"gauche\">
                                 <!--titre / Auteur / Date poste-->
@@ -128,7 +128,7 @@ $objPdo->query('SET NAMES utf8');
 
                 }
                 else if (isset($_POST['supNews'])) {
-                    $idNews = $_POST['$idNews'];
+                    $idNews = $_POST['idNews'];
                     $objPdo->query("delete from news where idnews = '$idNews'");
                 }
                 ?>
