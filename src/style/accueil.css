@@ -9,14 +9,14 @@
 body {
     font-family: Ubuntu;
     margin: 0;
-    background: linear-gradient(to right, #bebebe, #ffffff);
+    background: linear-gradient(to right, #bebebc, #ffffff);
 }
 
 /* Header */
 
 header {
     padding: 0.2%;
-    background: linear-gradient(to right, #131313, #2e3532);
+    background: linear-gradient(to right, #131313, #2d3733);
 }
 
 header img.Venti {
@@ -383,7 +383,7 @@ nav.inscrit ul li a {
 table tr td input {
     height: 40px;
     width: 130px;
-    background: linear-gradient(to right, #131313, #3b5148);
+    background: linear-gradient(to right, #131313, #1a243b);
     color:white;
     border: none;
 }
@@ -400,7 +400,7 @@ table tr td input {
 }
 
 .news tr {
-    background: linear-gradient(to right, #131313, #3b5148);
+    background: linear-gradient(to right, #131313, #2f8169);
     color: #FFFFFF;
 }
 
@@ -420,7 +420,7 @@ table tr td input {
 }
 
 footer {
-    background: linear-gradient(to right, #131313, #3b5148);
+    background: linear-gradient(to right, #131313, #1a243b);
     color: #FFFFFF;
     text-align: center;
     padding-top: 10px;

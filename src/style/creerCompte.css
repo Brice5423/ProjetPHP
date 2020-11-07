@@ -7,7 +7,7 @@ body {
     font-family: Ubuntu;
     padding: 80px;
 
-    background: linear-gradient(to right, #c3c3c3, #eeeeee);
+    background: linear-gradient(to right, #bebebc, #eeeeee);
 }
 h2{
     color: #262626;
@@ -23,12 +23,12 @@ input{
 }
 
 input:active, input:focus {
-    border-bottom: #00a760 2px solid;
+    border-bottom: #348E73 2px solid;
 
 }
 
 .nom {
-    background: linear-gradient(to right, #131313, #2e3532);
+    background: linear-gradient(to right, #131313, #1A243B);
     color: lightgray;
 }
 
@@ -37,7 +37,7 @@ input:active, input:focus {
 }
 
 .prenom {
-    background: linear-gradient(to right, #131313, #2e3532);
+    background: linear-gradient(to right, #131313, #1a243b);
     color: lightgray;
 }
 
@@ -46,7 +46,7 @@ input:active, input:focus {
 }
 
 .mail {
-    background: linear-gradient(to right, #131313, #2e3532);
+    background: linear-gradient(to right, #131313, #1A243B);
     color: lightgray;
 
 }
@@ -56,7 +56,7 @@ input:active, input:focus {
 }
 
 .mdp {
-    background: linear-gradient(to right, #131313, #2e3532);
+    background: linear-gradient(to right, #131313, #1A243B);
     color: lightgray;
 }
 

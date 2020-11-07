@@ -7,7 +7,7 @@ body {
     font-family: Ubuntu;
     padding: 80px;
 
-    background: linear-gradient(to right, #c3c3c3, #eeeeee);
+    background: linear-gradient(to right, #bebebc, #eeeeee);
 }
 
 h2 {
@@ -23,8 +23,13 @@ input{
     outline: none;
 }
 
+input:active, input:focus {
+    border-bottom: #348E73 2px solid;
+
+}
+
 .mail {
-    background: linear-gradient(to right, #131313, #2e3532);
+    background: linear-gradient(to right, #131313, #1A243B);
     color: lightgray;
 
 }
@@ -34,7 +39,7 @@ input{
 }
 
 .mdp {
-    background: linear-gradient(to right, #131313, #2e3532);
+    background: linear-gradient(to right, #131313, #1A243B);
     color: lightgray;
 }
 
