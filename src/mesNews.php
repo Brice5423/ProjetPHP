@@ -75,8 +75,6 @@ $objPdo->query('SET NAMES utf8');
             <table class="news" align="center">
                 <?php
                 function generationLigne($row) {
-                    echo "<form method = \"post\" action = \"mesNews.php\">";
-                    $_POST['idNews'] = $row['idnews'];
                     echo "<tr>
                             <td  class=\"gauche\">
                                 <!--titre / Auteur / Date poste-->
@@ -88,18 +86,6 @@ $objPdo->query('SET NAMES utf8');
                                 <p>".$row["textenews"]."</p>
                             </td>
                         </tr>";
-
-                    echo "<table align=\"center\">
-                            <tr>
-                                <td class=\"btnTri\" align=\"center\" colspan=\"2\">
-                                    <input type=\"submit\" value=\"MODIFI\" name=\"modifNews\"/>
-                                </td>
-                                <td class=\"btnTri\" align=\"center\" colspan=\"2\">
-                                    <input type=\"submit\" value=\"SUP\" name=\"supNews\"/>
-                                </td>
-                            </tr>
-                        </table>";
-                    echo "</form>";
                 }
 
                 $mail = $_SESSION['mail'];
@@ -122,14 +108,6 @@ $objPdo->query('SET NAMES utf8');
                     foreach ($result as $row) {
                         generationLigne($row);
                     }
-                }
-
-                if (isset($_POST['modifNews'])) {
-
-                }
-                else if (isset($_POST['supNews'])) {
-                    $idNews = $_POST['idNews'];
-                    $objPdo->query("delete from news where idnews = '$idNews'");
                 }
                 ?>
             </table>
