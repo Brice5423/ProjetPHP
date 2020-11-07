@@ -71,10 +71,13 @@ $objPdo->query('SET NAMES utf8');
             </tr>
         </table>
 
-        <table class="news" align="center">
-            <?php
-            function generationLigne($row) {
-                echo "<tr>
+
+            <table class="news" align="center">
+                <?php
+                function generationLigne($row) {
+                    echo "<form method = \"post\" action = \"mesNews.php\">";
+                    $idNews = $row['idnews'];
+                    echo "<tr>
                             <td  class=\"gauche\">
                                 <!--titre / Auteur / Date poste-->
                                 <h3>".$row["titrenews"]."</h3> (".$row["description"].") <br/>
@@ -85,31 +88,51 @@ $objPdo->query('SET NAMES utf8');
                                 <p>".$row["textenews"]."</p>
                             </td>
                         </tr>";
-            }
 
-            $mail = $_SESSION['mail'];
-            $mdp = $_SESSION['mdp'];
+                    echo "<table align=\"center\">
+                            <tr>
+                                <td class=\"btnTri\" align=\"center\" colspan=\"2\">
+                                    <input type=\"submit\" value=\"MODIFI\" name=\"modifNews\"/>
+                                </td>
+                                <td class=\"btnTri\" align=\"center\" colspan=\"2\">
+                                    <input type=\"submit\" value=\"SUP\" name=\"supNews\"/>
+                                </td>
+                            </tr>
+                        </table>";
+                    echo "</form>";
+                }
 
-            if (isset($_POST['triDate'])) {
-                $result = $objPdo->query("select * from news n, redacteur r, theme t where n.idtheme = t.idtheme and n.idredacteur = r.idredacteur and adressemail = '$mail' and motdepasse = '$mdp' order by n.datenews DESC");
-                foreach ($result as $row) {
-                    generationLigne($row);
+                $mail = $_SESSION['mail'];
+                $mdp = $_SESSION['mdp'];
+
+                if (isset($_POST['triDate'])) {
+                    $result = $objPdo->query("select * from news n, redacteur r, theme t where n.idtheme = t.idtheme and n.idredacteur = r.idredacteur and adressemail = '$mail' and motdepasse = '$mdp' order by n.datenews DESC");
+                    foreach ($result as $row) {
+                        generationLigne($row);
+                    }
                 }
-            }
-            else if (isset($_POST['triTheme'])) {
-                $result = $objPdo->query("select * from news n, redacteur r, theme t where n.idtheme = t.idtheme and n.idredacteur = r.idredacteur and adressemail = '$mail' and motdepasse = '$mdp' order by t.description ASC, n.datenews DESC");
-                foreach ($result as $row) {
-                    generationLigne($row);
+                else if (isset($_POST['triTheme'])) {
+                    $result = $objPdo->query("select * from news n, redacteur r, theme t where n.idtheme = t.idtheme and n.idredacteur = r.idredacteur and adressemail = '$mail' and motdepasse = '$mdp' order by t.description ASC, n.datenews DESC");
+                    foreach ($result as $row) {
+                        generationLigne($row);
+                    }
                 }
-            }
-            else {
-                $result = $objPdo->query("select * from news n, redacteur r, theme t where n.idtheme = t.idtheme and n.idredacteur = r.idredacteur and adressemail = '$mail' and motdepasse = '$mdp' order by n.datenews DESC");
-                foreach ($result as $row) {
-                    generationLigne($row);
+                else {
+                    $result = $objPdo->query("select * from news n, redacteur r, theme t where n.idtheme = t.idtheme and n.idredacteur = r.idredacteur and adressemail = '$mail' and motdepasse = '$mdp' order by n.datenews DESC");
+                    foreach ($result as $row) {
+                        generationLigne($row);
+                    }
                 }
-            }
-            ?>
-        </table>
+
+                if (isset($_POST['modifNews'])) {
+
+                }
+                else if (isset($_POST['supNews'])) {
+                    $idNews = $_POST['$idNews'];
+                    $objPdo->query("delete from news where idnews = '$idNews'");
+                }
+                ?>
+            </table>
     </form>
 
     <footer class="foot">
